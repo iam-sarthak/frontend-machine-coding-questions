@@ -1,0 +1,41 @@
+<!-- 20:00 -->
+
+<html>
+  <head>
+    <title>JavaScript Calculator</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const output = document.querySelector(".output");
+        document.querySelector("#add").addEventListener("click", () => {
+          let a = parseFloat(document.querySelector("#a").value);
+          let b = parseFloat(document.querySelector("#b").value);
+          output.innerText = a + b;
+        });
+        document.querySelector("#sub").addEventListener("click", () => {
+            let a = parseFloat(document.querySelector("#a").value);
+            let b = parseFloat(document.querySelector("#b").value);
+          output.innerText = a - b;
+        });
+        document.querySelector("#div").addEventListener("click", () => {
+            let a = parseFloat(document.querySelector("#a").value);
+            let b = parseFloat(document.querySelector("#b").value);
+          output.innerText = a / b;
+        });
+        document.querySelector("#mul").addEventListener("click", () => {
+            let a = parseFloat(document.querySelector("#a").value);
+            let b = parseFloat(document.querySelector("#b").value);
+          output.innerText = a * b;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="output"></div>
+    <input value="0" id="a" type="number" />
+    <input value="0" id="b" type="number" />
+    <button id="add">+</button>
+    <button id="sub">-</button>
+    <button id="div">/</button>
+    <button id="mul">*</button>
+  </body>
+</html>
