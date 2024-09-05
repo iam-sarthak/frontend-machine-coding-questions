@@ -1,0 +1,83 @@
+<!-- 45:00 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Carousel</title>
+  </head>
+  <style>
+    .carousel {
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .imag {
+      width: 50%;
+      display: none;
+    }
+    .carousel img {
+      width: 40vw;
+      height: 40vh;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let selected = 1;
+      showslides();
+      const nextslides = () => {
+        selected = (selected + 1) % 4;
+        showslides();
+      };
+      const prvslides = () => {
+        selected = (selected - 1 + 4) % 4;
+        showslides();
+      };
+      function showslides() {
+        const images = document.querySelectorAll(".imag");
+        for (let i = 0; i < images.length; i++) {
+          images[i].style.display = "none";
+        }
+        images[selected - 1].style.display = "block";
+      };
+      window.nextslides = nextslides;
+      window.prvslides = prvslides;
+    });
+  </script>
+  <body>
+    <div class="carousel">
+      <div class="imag">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrBwARZpC1OVgQCHh9JbNmL52o4rWFjVwlEw&s"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="imag">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR77xGIoe-cYX-PqEJ2_IzwLgUv9O5twcteOg&s"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="imag">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiEJZbW89owDv16u3YF1Mr65eszBbowgY6tA&s"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="imag">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXhGR4RUO8IRFgKsLT47QMuVcD2GONVkanjQ&s"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <button onclick="prvslides()">Previous</button>
+    <button onclick="nextslides()">Next</button>
+  </body>
+</html>
