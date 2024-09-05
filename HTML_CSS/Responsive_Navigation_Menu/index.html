@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Responsive Navigation Menu</title>
+
+    <!-- point to be noted that without this line the responsiveness dosn't work -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ////////////////////////////////////////////////////////////////////////////// -->
+
+</head>
+<style>
+    .burger {
+        display: none;
+        cursor: pointer;
+    }
+
+    .burger img {
+        width: 30px;
+        height: 30px;
+    }
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.nav-bar li{
+    list-style-type: none;
+}
+.nav-bar li a {
+    font-size: large;
+    text-decoration: none;
+}
+@media only screen and (max-width: 720px) {
+        .nav-bar {
+            display: none;
+        }
+
+        .burger {
+            display: block;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    let burger = document.querySelector('.burger');
+    let nav_bar = document.querySelector('.nav-bar');
+
+    burger.addEventListener('click',()=>{
+        if(nav_bar.style.display === 'none'){
+            nav_bar.style.display = 'flex';
+        }else{
+            nav_bar.style.display = 'none';
+        }
+    });
+});
+</script>
+<body>
+    <div class="burger" onclick="clicking"><img src="https://w7.pngwing.com/pngs/638/88/png-transparent-home-icon-computer-icons-home-page-favicon-website-website-free-files-miscellaneous-web-design-web-navigation-thumbnail.png" ></div>
+    <div class="nav-bar">
+            <li><a href="/">home</a></li>
+            <li><a href="/contact">contact</a></li>
+            <li><a href="/profile">profile</a></li>
+            <li><a href="/about us">about us</a></li>
+    </div>
+
+</body>
+</html>
